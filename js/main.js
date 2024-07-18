@@ -30,22 +30,37 @@ function handleInputNumber(event)
 const result = document.getElementById("result-box");
 
 const plus = document.getElementById("btn-plus");
-plus.addEventListener('click', handlePlusClick);
+plus.addEventListener('click', handleButtonPlusClick);
 
 const times = document.getElementById("btn-times")
-times.addEventListener('click', handleTimesClick);
+times.addEventListener('click', handleButtonTimesClick);
 
-function handlePlusClick(event)
+function handleButtonPlusClick(event)
 {
    event.preventDefault();
    result.innerHTML = Number(number1.value) + Number(number2.value);
 }
 
-function handleTimesClick(event)
+function handleButtonTimesClick(event)
 {
    event.preventDefault();
    result.innerHTML = Number(number1.value) * Number(number2.value);
 }
+
+// Limpar campos
+
+const clear = document.getElementById("btn-clear");
+clear.addEventListener('click', handleButtonClearClick);
+
+function handleButtonClearClick(event)
+{
+   number1.value = "";
+   number1.classList.remove("input-error");
+   number2.value = "";
+   number2.classList.remove("input-error");
+   result.innerHTML = 0;
+}
+
 
 
 
