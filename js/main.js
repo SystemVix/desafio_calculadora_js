@@ -25,5 +25,27 @@ function handleInputNumber(event)
    }
 }
 
+// Cálculos
+
+const result = document.getElementById("result-box");
+
+const plus = document.getElementById("btn-plus");
+plus.addEventListener('click', handlePlusClick);
+
+const times = document.getElementById("btn-times")
+times.addEventListener('click', handleTimesClick);
+
+function handlePlusClick(event)
+{
+   event.preventDefault();
+   result.innerHTML = Number(number1.value) + Number(number2.value);
+}
+
+function handleTimesClick(event)
+{
+   event.preventDefault();
+   result.innerHTML = Number(number1.value) * Number(number2.value);
+}
+
 
 
