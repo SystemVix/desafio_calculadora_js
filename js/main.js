@@ -1,27 +1,27 @@
 // Captura do number1
 const number1 = document.getElementById("number1");
-number1.addEventListener('change', handleInputNumber);
+number1.addEventListener('keyup', handleInputNumberKeyup);
 
 // Captura do number2
 const number2 = document.getElementById("number2");
-number2.addEventListener('change', handleInputNumber);
+number2.addEventListener('keyup', handleInputNumberKeyup);
 
 // Validação se é numero (Prof. Nélio / StackOverFlow)
 function isNumber(numero)
 {
-   return !isNaN(parseFloat(n)) && isFinite(n);
+   return !isNaN(parseFloat(numero)) && isFinite(numero);   
 }
 
 // Validação de number1 e number2
-function handleInputNumber(event)
+function handleInputNumberKeyup(event)
 {
    if (isNumber(event.target.value))
    {
-      event.target.classList.remove("input-error");
+      event.target.classList.remove("input-error");      
    }
    else
    {
-      event.target.classList.add("input-error");
+      event.target.classList.add("input-error");      
    }
 }
 
